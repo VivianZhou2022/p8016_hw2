@@ -5,3 +5,56 @@ date: "2023-03-10"
 output: pdf_document
 ---
 
+```{r}
+library(tidyverse)
+library(caret)
+library(splines)
+library(mgcv)
+library(earth)
+library(pdp)
+library(ggplot2)
+library(gridExtra)
+
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Data preparation
+
+In this exercise, we build nonlinear models using the “College” data. The dataset
+contains statistics for 565 US Colleges from a previous issue of US News and World Report.
+The response variable is the out-of-state tuition (Outstate). We exclude the statistics for Columbia University (i.e., the 125th observation) to train the models.
+
+```{r}
+college_df = read_csv('./data/College.csv') %>% 
+  janitor::clean_names() 
+
+  #skimr::skim(college_df)
+
+college_train = college_df %>% 
+  filter(college != "Columbia University") %>% 
+  select(-college)
+```
+
+# Exploratory data analysis
+
+```{r}
+# matrix of predictors
+x = model.matrix(outstate ~ ., college_train)[,-1]
+# vector of response
+y = college_train$outstate
+
+# the relationship of response vs. predictors
+theme1 <- trellis.par.get()
+theme1$plot.symbol$col <- rgb(.2, .4, .2, .5)
+theme1$plot.symbol$pch <- 16
+theme1$plot.line$col <- rgb(.8, .1, .1, 1)
+theme1$plot.line$lwd <- 2
+theme1$strip.background$col <- rgb(.0, .2, .6, .2)
+trellis.par.set(theme1)
+
+# feature plot
+featurePlot(x, y, plot = "scatter", labels = c("","Y"),
+            type = c("p"), layout = c(4, 4))
+```
+
+Based on the feature plot, we can see that non-linear trend seems to appear in `Terminal`, `Top10perc`, `PhD`, `perc.alumni`, `Expend` and `Grad.Rate`, and linear trend seems to appear in `Top25perc`, `Room.Board`. While some other features, such as `Books`, `Personal` and `Apps`, have extremely large data points which make most of the data points in the plot cluster together to the left side so that the linear or non-linear trend cannot be simply observed.
