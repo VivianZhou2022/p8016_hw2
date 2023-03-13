@@ -201,7 +201,7 @@ GCV score: 2766492
         
 *Plot of final model*
 
-```{r fig.height=20, fig.width=20}
+```{r fig.height=10, fig.width=10}
 gam_final <- gam(outstate ~ s(perc_alumni) + s(terminal) + s(books) + 
                 s(grad_rate)+ s(top10perc) + s(s_f_ratio) + s(personal) + 
                 s(p_undergrad) + s(room_board) + s(enroll) + s(accept) +
@@ -242,7 +242,6 @@ gam_test_MSE
 gam_test_RMSE = sqrt(gam_test_MSE)
 gam_test_RMSE
 ```
-We may choose to fit our GAM using either MCGV or the `caret` package. Notably, the latter may result in loss of flexibility since it automatically precludes the possibility of nonlinear transformations for predictors that take fewer than 10 unique values. However, in this case, all of our predictors take more than 10 unique values, and so we do not expect loss of flexibility by using `caret`.
 
 - Using all of our predictors, our model has an MSE of 2260226 (RMSE 1503.405) when we apply our model to the training data and an MSE of 3012372 (RMSE 1735.619) when we apply it to the testing data from our original partitioning. 
 
@@ -280,7 +279,7 @@ p1 = pdp::partial(mars.fit, pred.var = c("perc_alumni"), grid.resolution = 10) %
 p1
 
 # interaction partial dependence plot between arbitrary predictors in the final model `Apps` and `Accept`
-p2 = pdp::partial(mars.fit, pred.var =c("apps","accept"), grid.resolution = 10) %>% plotPartial(levelplot = FALSE, zlab = "yhat", drape = TRUE, screen = list(z = 20, x = -60))
+p2 = pdp::partial(mars.fit, pred.var = c("apps","accept"), grid.resolution = 10) %>% plotPartial(levelplot = FALSE, zlab = "yhat", drape = TRUE, screen = list(z = 20, x = -60))
 p2
 
 grid.arrange(p1, p2, ncol = 2)
@@ -319,6 +318,8 @@ mars_test_rmse
 
 # e). Model selection
 
-Based on the summary results and the plot, MARS model is preferred compared to linear model, since the RMSE of MARS model is smaller than linear model, and the R squared of MARS is a little larger than linear model, which denotes more proportion of y is explained by x.
+- Based on the summary results and the plot, MARS model is preferred compared to linear model, since the RMSE of MARS model is smaller than linear model, and the R squared of MARS is a little larger than linear model, which denotes more proportion of y is explained by x.
 
-Moreover, the test error of MARS (RMSE = 1665.72) is smaller than linear model (RMSE = 1735.178), which further enforces our decision above.
+- Moreover, the test error of MARS (RMSE = 1665.72) is smaller than linear model (RMSE = 1735.178), which further enforces our decision above.
+
+- For general applications, I think MARS is a better approach compared to a linear model. Since MARS models are more flexible than linear regression models. MARS models are simple to understand and interpret.

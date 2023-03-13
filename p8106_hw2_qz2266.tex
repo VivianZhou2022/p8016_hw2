@@ -1,0 +1,730 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={p8106\_hw2\_qz2266},
+  pdfauthor={Qing Zhou},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{p8106\_hw2\_qz2266}
+\author{Qing Zhou}
+\date{2023-03-10}
+
+\begin{document}
+\maketitle
+
+\hypertarget{data-preparation}{%
+\section{Data preparation}\label{data-preparation}}
+
+In this exercise, we build nonlinear models using the ``College'' data.
+The dataset contains statistics for 565 US Colleges from a previous
+issue of US News and World Report. The response variable is the
+out-of-state tuition (Outstate).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{college\_df }\OtherTok{=} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}./data/College.csv\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  janitor}\SpecialCharTok{::}\FunctionTok{clean\_names}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{na.omit}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{relocate}\NormalTok{(}\StringTok{"outstate"}\NormalTok{, }\AttributeTok{.after =} \StringTok{"grad\_rate"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{college)}
+\end{Highlighting}
+\end{Shaded}
+
+We then partition the dataset into two parts: training data (80\%) and
+test data (20\%)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{trainRows }\OtherTok{\textless{}{-}} \FunctionTok{createDataPartition}\NormalTok{(}\AttributeTok{y =}\NormalTok{ college\_df}\SpecialCharTok{$}\NormalTok{outstate, }\AttributeTok{p =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{list =} \ConstantTok{FALSE}\NormalTok{)}
+
+\CommentTok{\# Training data}
+\NormalTok{train\_df }\OtherTok{=}\NormalTok{ college\_df[trainRows, ]}
+\NormalTok{x\_train }\OtherTok{=} \FunctionTok{model.matrix}\NormalTok{(outstate}\SpecialCharTok{\textasciitilde{}}\NormalTok{.,train\_df)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y\_train }\OtherTok{=}\NormalTok{ train\_df}\SpecialCharTok{$}\NormalTok{outstate}
+\CommentTok{\# Testing data}
+\NormalTok{test\_df }\OtherTok{=}\NormalTok{ college\_df[}\SpecialCharTok{{-}}\NormalTok{trainRows, ]}
+\NormalTok{x\_test }\OtherTok{=} \FunctionTok{model.matrix}\NormalTok{(outstate}\SpecialCharTok{\textasciitilde{}}\NormalTok{.,test\_df)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y\_test }\OtherTok{=}\NormalTok{ test\_df}\SpecialCharTok{$}\NormalTok{outstate}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exploratory-data-analysis}{%
+\section{Exploratory data analysis}\label{exploratory-data-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{theme1 }\OtherTok{=} \FunctionTok{trellis.par.get}\NormalTok{()}
+\NormalTok{theme1}\SpecialCharTok{$}\NormalTok{plot.symbol}\SpecialCharTok{$}\NormalTok{col }\OtherTok{=} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{2}\NormalTok{, .}\DecValTok{4}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{5}\NormalTok{)}
+\NormalTok{theme1}\SpecialCharTok{$}\NormalTok{plot.symbol}\SpecialCharTok{$}\NormalTok{pch }\OtherTok{=} \DecValTok{16}
+\NormalTok{theme1}\SpecialCharTok{$}\NormalTok{plot.line}\SpecialCharTok{$}\NormalTok{col }\OtherTok{=} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{theme1}\SpecialCharTok{$}\NormalTok{plot.line}\SpecialCharTok{$}\NormalTok{lwd }\OtherTok{=} \DecValTok{2}
+\NormalTok{theme1}\SpecialCharTok{$}\NormalTok{strip.background}\SpecialCharTok{$}\NormalTok{col }\OtherTok{=} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{0}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{6}\NormalTok{, .}\DecValTok{2}\NormalTok{)}
+\FunctionTok{trellis.par.set}\NormalTok{(theme1)}
+
+\CommentTok{\# feature plot}
+\FunctionTok{featurePlot}\NormalTok{(x\_train, y\_train, }\AttributeTok{plot =} \StringTok{"scatter"}\NormalTok{, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{""}\NormalTok{,}\StringTok{"Y"}\NormalTok{), }\AttributeTok{type =} \FunctionTok{c}\NormalTok{(}\StringTok{"p"}\NormalTok{), }\AttributeTok{layout =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics[width=0.9\linewidth]{p8106_hw2_qz2266_files/figure-latex/EDA-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Based on the feature plot, we can see there might be linear trends
+  between the outcome and predictors \texttt{perc\_alumni},
+  \texttt{grad\_rate}, \texttt{ph\_d}, \texttt{terminal},
+  \texttt{top25perc}, \texttt{room\_board}, and \texttt{top10perc}.
+\end{itemize}
+
+\hypertarget{a.-smoothing-spline-models}{%
+\section{a). Smoothing spline models}\label{a.-smoothing-spline-models}}
+
+Fit smoothing spline models using perc.alumni as the only predictor of
+Outstate for a range of degrees of freedom.
+
+\emph{1). The degree of freedom is obtained by generalized
+cross-validation:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# fit model}
+\NormalTok{fit.ss }\OtherTok{=} \FunctionTok{smooth.spline}\NormalTok{(train\_df}\SpecialCharTok{$}\NormalTok{perc\_alumni, train\_df}\SpecialCharTok{$}\NormalTok{outstate)}
+\CommentTok{\# optimal degrees of freedom based on cross{-}validation}
+\NormalTok{fit.ss}\SpecialCharTok{$}\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.779231
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#plot the resulting fits}
+\NormalTok{palumnilims }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(train\_df}\SpecialCharTok{$}\NormalTok{perc\_alumni)}
+\NormalTok{palumni.grid }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =}\NormalTok{ palumnilims[}\DecValTok{1}\NormalTok{],}\AttributeTok{to =}\NormalTok{ palumnilims[}\DecValTok{2}\NormalTok{])}
+
+\NormalTok{pred.ss }\OtherTok{=} \FunctionTok{predict}\NormalTok{(fit.ss, }\AttributeTok{x =}\NormalTok{ palumni.grid)}
+\NormalTok{pred.ss.df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{pred =}\NormalTok{ pred.ss}\SpecialCharTok{$}\NormalTok{y, }\AttributeTok{perc\_alumni =}\NormalTok{ palumni.grid)}
+
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ test\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ outstate)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{2}\NormalTok{, .}\DecValTok{4}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ pred), }\AttributeTok{data =}\NormalTok{ pred.ss.df, }\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\emph{2). The degree of freedom is obtained by my choice:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# 2 degree of freedom}
+\NormalTok{fit.ss }\OtherTok{=} \FunctionTok{smooth.spline}\NormalTok{(train\_df}\SpecialCharTok{$}\NormalTok{perc\_alumni, train\_df}\SpecialCharTok{$}\NormalTok{outstate, }\AttributeTok{df =} \DecValTok{2}\NormalTok{) }
+\NormalTok{fit.ss}\SpecialCharTok{$}\NormalTok{df }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.000232
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pred.ss }\OtherTok{=} \FunctionTok{predict}\NormalTok{(fit.ss, }\AttributeTok{x =}\NormalTok{ palumni.grid)}
+\NormalTok{pred.ss.df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{pred =}\NormalTok{ pred.ss}\SpecialCharTok{$}\NormalTok{y, }\AttributeTok{perc\_alumni =}\NormalTok{ palumni.grid)}
+
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ test\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ outstate)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{2}\NormalTok{, .}\DecValTok{4}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ pred), }\AttributeTok{data =}\NormalTok{ pred.ss.df, }\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 20 degrees of freedom}
+\NormalTok{fit.ss }\OtherTok{=} \FunctionTok{smooth.spline}\NormalTok{(train\_df}\SpecialCharTok{$}\NormalTok{perc\_alumni, train\_df}\SpecialCharTok{$}\NormalTok{outstate, }\AttributeTok{df =} \DecValTok{20}\NormalTok{) }
+\NormalTok{fit.ss}\SpecialCharTok{$}\NormalTok{df }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20.00271
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pred.ss }\OtherTok{=} \FunctionTok{predict}\NormalTok{(fit.ss, }\AttributeTok{x =}\NormalTok{ palumni.grid)}
+\NormalTok{pred.ss.df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{pred =}\NormalTok{ pred.ss}\SpecialCharTok{$}\NormalTok{y, }\AttributeTok{perc\_alumni =}\NormalTok{ palumni.grid)}
+
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ test\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ outstate)) }\SpecialCharTok{+}
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{2}\NormalTok{, .}\DecValTok{4}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{5}\NormalTok{))}
+
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ perc\_alumni, }\AttributeTok{y =}\NormalTok{ pred), }\AttributeTok{data =}\NormalTok{ pred.ss.df, }\AttributeTok{color =} \FunctionTok{rgb}\NormalTok{(.}\DecValTok{8}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\begin{itemize}
+\item
+  When setting df = 2 and df = 20, we can see that df = 2 shows a more
+  linear trend, while df = 10 shows a more wiggly fitted line.
+  Therefore, larger df values make the line much more wiggly, suggesting
+  potential overfitting issue, while smaller degrees of freedom make the
+  fitted line more linear and smooth, but less flexible and thus might
+  underfit the data points.
+\item
+  The degree of freedom obtained by generalized cross validation is
+  3.779231, and the fitted curve has more details than the line of df =
+  2 and is more linear and smooth than the line of df = 10. By comparing
+  these three models, we conclude that the optimized model fits the data
+  best, with a positive relationship between \texttt{perc\_alumni} and
+  \texttt{Outstate}.
+\end{itemize}
+
+\hypertarget{b.-generalized-additive-models}{%
+\section{b). Generalized additive
+models}\label{b.-generalized-additive-models}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+
+\CommentTok{\# 10{-}fold cross{-}validation  }
+\NormalTok{ctrl1 }\OtherTok{=} \FunctionTok{trainControl}\NormalTok{(}\AttributeTok{method =} \StringTok{"cv"}\NormalTok{, }\AttributeTok{number =} \DecValTok{10}\NormalTok{)}
+
+\CommentTok{\# fit a gam model using all predictors}
+\NormalTok{gam\_fit\_all }\OtherTok{=} \FunctionTok{train}\NormalTok{(x\_train, y\_train, }
+                 \AttributeTok{method =} \StringTok{"gam"}\NormalTok{,}
+                 \AttributeTok{trControl =}\NormalTok{ ctrl1) }
+
+\NormalTok{gam\_fit\_all}\SpecialCharTok{$}\NormalTok{bestTune}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   select method
+## 1  FALSE GCV.Cp
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_fit\_all}\SpecialCharTok{$}\NormalTok{finalModel}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## .outcome ~ s(perc_alumni) + s(terminal) + s(books) + s(grad_rate) + 
+##     s(ph_d) + s(top10perc) + s(top25perc) + s(s_f_ratio) + s(personal) + 
+##     s(p_undergrad) + s(room_board) + s(enroll) + s(accept) + 
+##     s(f_undergrad) + s(apps) + s(expend)
+## 
+## Estimated degrees of freedom:
+## 6.05 1.00 2.17 3.56 1.81 1.00 1.00 
+## 3.69 1.00 1.00 2.47 1.00 4.19 5.51 
+## 4.45 6.87  total = 47.75 
+## 
+## GCV score: 2824207
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# fit GAM alternatively}
+\NormalTok{gam\_fit\_alt }\OtherTok{\textless{}{-}} \FunctionTok{train}\NormalTok{(x\_train, y\_train, }
+                 \AttributeTok{method =} \StringTok{"gam"}\NormalTok{,}
+                 \AttributeTok{tuneGrid =} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{method =} \StringTok{"GCV.Cp"}\NormalTok{, }\AttributeTok{select =} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{)),}
+                 \AttributeTok{trControl =}\NormalTok{ ctrl1) }
+
+\NormalTok{gam\_fit\_alt}\SpecialCharTok{$}\NormalTok{bestTune       }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   select method
+## 1   TRUE GCV.Cp
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_fit\_alt}\SpecialCharTok{$}\NormalTok{finalModel}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Family: gaussian 
+## Link function: identity 
+## 
+## Formula:
+## .outcome ~ s(perc_alumni) + s(terminal) + s(books) + s(grad_rate) + 
+##     s(ph_d) + s(top10perc) + s(top25perc) + s(s_f_ratio) + s(personal) + 
+##     s(p_undergrad) + s(room_board) + s(enroll) + s(accept) + 
+##     s(f_undergrad) + s(apps) + s(expend)
+## 
+## Estimated degrees of freedom:
+## 6.077 0.198 1.095 1.437 0.000 0.832 0.000 
+## 3.853 0.638 0.796 3.770 1.000 4.625 5.917 
+## 4.603 5.930  total = 41.77 
+## 
+## GCV score: 2766492
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The GAM model for all predictors .outcome \textasciitilde{}
+  s(perc\_alumni) + s(terminal) + s(books) + s(grad\_rate) + s(ph\_d) +
+  s(top10perc) + s(top25perc) + s(s\_f\_ratio) + s(personal) +
+  s(p\_undergrad) + s(room\_board) + s(enroll) + s(accept) +
+  s(f\_undergrad) + s(apps) + s(expend)
+\end{enumerate}
+
+Estimated degrees of freedom: 6.05 1.00 2.17 3.56 1.81 1.00 1.00 3.69
+1.00 1.00 2.47 1.00 4.19 5.51 4.45 6.87 total = 47.75
+
+GCV score: 2824207
+
+2.The GAM model for the selection specification: .outcome
+\textasciitilde{} s(perc\_alumni) + s(terminal) + s(books) +
+s(grad\_rate) + s(ph\_d) + s(top10perc) + s(top25perc) + s(s\_f\_ratio)
++ s(personal) + s(p\_undergrad) + s(room\_board) + s(enroll) + s(accept)
++ s(f\_undergrad) + s(apps) + s(expend)
+
+Estimated degrees of freedom: 6.077 0.198 1.095 1.437 0.000 0.832 0.000
+3.853 0.638 0.796 3.770 1.000 4.625 5.917 4.603 5.930 total = 41.77
+
+GCV score: 2766492
+
+\begin{itemize}
+\item
+  From the result above, we remove \texttt{PhD}and \texttt{Top25perc}
+  since their df = 0. Therefore, my final GAM model has 14 predictors.
+  It doesn't have all 16 predictors. The model is as follows:
+\item
+  Outstate \textasciitilde{} s(perc.alumni) + s(Terminal) + s(Books) +
+  s(Grad.Rate) + s(Top10perc) + s(S.F.Ratio) + s(Personal) +
+  s(P.Undergrad) + s(Room.Board) + s(Enroll) + s(Accept) +
+  s(F.Undergrad) + s(Apps) + s(Expend)
+\end{itemize}
+
+\emph{Plot of final model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_final }\OtherTok{\textless{}{-}} \FunctionTok{gam}\NormalTok{(outstate }\SpecialCharTok{\textasciitilde{}} \FunctionTok{s}\NormalTok{(perc\_alumni) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(terminal) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(books) }\SpecialCharTok{+} 
+                \FunctionTok{s}\NormalTok{(grad\_rate)}\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(top10perc) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(s\_f\_ratio) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(personal) }\SpecialCharTok{+} 
+                \FunctionTok{s}\NormalTok{(p\_undergrad) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(room\_board) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(enroll) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(accept) }\SpecialCharTok{+}
+                \FunctionTok{s}\NormalTok{(f\_undergrad) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(apps) }\SpecialCharTok{+} \FunctionTok{s}\NormalTok{(expend), }
+              \AttributeTok{data =}\NormalTok{ train\_df) }
+
+\FunctionTok{plot}\NormalTok{(gam\_final)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-1.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-2.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-3.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-4.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-5.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-6.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-7.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-8.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-9.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-10.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-11.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-12.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-13.pdf}
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-5-14.pdf}
+
+\emph{Report test error.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate training MSE of GAM model 1}
+\NormalTok{gam\_train\_MSE }\OtherTok{=} \FunctionTok{mean}\NormalTok{((y\_train }\SpecialCharTok{{-}} \FunctionTok{predict}\NormalTok{(gam\_fit\_all))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{gam\_train\_MSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2260226
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_train\_RMSE }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(gam\_train\_MSE)}
+\NormalTok{gam\_train\_RMSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1503.405
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate test MSE of GAM model 1}
+\NormalTok{test\_predictions }\OtherTok{=} \FunctionTok{predict}\NormalTok{(gam\_fit\_all, x\_test)}
+\NormalTok{gam\_test\_MSE }\OtherTok{=} \FunctionTok{mean}\NormalTok{((y\_test }\SpecialCharTok{{-}}\NormalTok{ test\_predictions)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{gam\_test\_MSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3012372
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_test\_RMSE }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(gam\_test\_MSE)}
+\NormalTok{gam\_test\_RMSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1735.619
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate training MSE of GAM model 2}
+\NormalTok{gam\_train\_MSE }\OtherTok{=} \FunctionTok{mean}\NormalTok{((y\_train }\SpecialCharTok{{-}} \FunctionTok{predict}\NormalTok{(gam\_fit\_alt))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{gam\_train\_MSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2279817
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_train\_RMSE }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(gam\_train\_MSE)}
+\NormalTok{gam\_train\_RMSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1509.906
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate test MSE of GAM model 2}
+\NormalTok{test\_predictions }\OtherTok{=} \FunctionTok{predict}\NormalTok{(gam\_fit\_alt, x\_test)}
+\NormalTok{gam\_test\_MSE }\OtherTok{=} \FunctionTok{mean}\NormalTok{((y\_test }\SpecialCharTok{{-}}\NormalTok{ test\_predictions)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{gam\_test\_MSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3010842
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gam\_test\_RMSE }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(gam\_test\_MSE)}
+\NormalTok{gam\_test\_RMSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1735.178
+\end{verbatim}
+
+\begin{itemize}
+\item
+  Using all of our predictors, our model has an MSE of 2260226 (RMSE
+  1503.405) when we apply our model to the training data and an MSE of
+  3012372 (RMSE 1735.619) when we apply it to the testing data from our
+  original partitioning.
+\item
+  Alternativelly, the other model has an MSE of 2279817 (RMSE 1509.906)
+  when we apply our model to the training data and an MSE of 3010842
+  (RMSE 1735.178) when we apply it to the testing data from our original
+  partitioning.
+\item
+  In summary, when using all of our predictors, we have effective
+  degrees of freedom, which represent the complexity of the smooth
+  function. \texttt{terminal}, \texttt{top10perc}, \texttt{top25perc},
+  \texttt{personal}, \texttt{p\_undergrad}, and \texttt{enroll} all have
+  df = 1, corresponding to a linear trend. Those with dfs around 2, such
+  as
+  \texttt{room\_board\textasciigrave{}\textasciigrave{}\ and}books\texttt{,\ suggesting\ a\ \ quadratic\ relationship,\ whereas\ those\ with\ dfs\ around\ three,\ such\ as}grad\_rate\texttt{and}accept`,
+  are cubically incorporated, and so forth.
+\end{itemize}
+
+\hypertarget{c.-train-a-multivariate-adaptive-regression-spline-mars-model-using-all-the-predictors}{%
+\section{c). Train a multivariate adaptive regression spline (MARS)
+model using all the
+predictors}\label{c.-train-a-multivariate-adaptive-regression-spline-mars-model-using-all-the-predictors}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mars\_grid }\OtherTok{\textless{}{-}} \FunctionTok{expand.grid}\NormalTok{(}\AttributeTok{degree =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }
+                         \AttributeTok{nprune =} \DecValTok{2}\SpecialCharTok{:}\DecValTok{16}\NormalTok{)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{mars.fit }\OtherTok{\textless{}{-}} \FunctionTok{train}\NormalTok{(x\_train, y\_train,}
+                 \AttributeTok{method =} \StringTok{"earth"}\NormalTok{,}
+                 \AttributeTok{tuneGrid =}\NormalTok{ mars\_grid,}
+                 \AttributeTok{trControl =}\NormalTok{ ctrl1)}
+\FunctionTok{ggplot}\NormalTok{(mars.fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mars.fit}\SpecialCharTok{$}\NormalTok{bestTune}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    nprune degree
+## 15     16      1
+\end{verbatim}
+
+\emph{Report the model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The final MARS model has the following predictors, coefficients, and hinge functions:}
+\FunctionTok{coef}\NormalTok{(mars.fit}\SpecialCharTok{$}\NormalTok{finalModel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         (Intercept)     h(expend-15886)     h(79-grad_rate)  h(room_board-4323) 
+##        9750.9084463          -0.7366761         -27.4149388           0.3555943 
+##  h(4323-room_board) h(1379-f_undergrad)   h(22-perc_alumni)        h(apps-3712) 
+##          -1.0463218          -1.5733517         -91.7755202           0.4447256 
+##    h(1300-personal)      h(expend-6897)       h(enroll-911)       h(911-enroll) 
+##           0.8665098           0.7149307          -2.0263362           5.7508922 
+##      h(2109-accept) 
+##          -1.9904298
+\end{verbatim}
+
+\emph{Partial dependence plot:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# a single arbitrary predictor in the final model \textasciigrave{}perc.alumni\textasciigrave{}:}
+\NormalTok{p1 }\OtherTok{=}\NormalTok{ pdp}\SpecialCharTok{::}\FunctionTok{partial}\NormalTok{(mars.fit, }\AttributeTok{pred.var =} \FunctionTok{c}\NormalTok{(}\StringTok{"perc\_alumni"}\NormalTok{), }\AttributeTok{grid.resolution =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{autoplot}\NormalTok{()}
+\NormalTok{p1}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# interaction partial dependence plot between arbitrary predictors in the final model \textasciigrave{}Apps\textasciigrave{} and \textasciigrave{}Accept\textasciigrave{}}
+\NormalTok{p2 }\OtherTok{=}\NormalTok{ pdp}\SpecialCharTok{::}\FunctionTok{partial}\NormalTok{(mars.fit, }\AttributeTok{pred.var =} \FunctionTok{c}\NormalTok{(}\StringTok{"apps"}\NormalTok{,}\StringTok{"accept"}\NormalTok{), }\AttributeTok{grid.resolution =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{plotPartial}\NormalTok{(}\AttributeTok{levelplot =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{zlab =} \StringTok{"yhat"}\NormalTok{, }\AttributeTok{drape =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{screen =} \FunctionTok{list}\NormalTok{(}\AttributeTok{z =} \DecValTok{20}\NormalTok{, }\AttributeTok{x =} \SpecialCharTok{{-}}\DecValTok{60}\NormalTok{))}
+\NormalTok{p2}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-10-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{grid.arrange}\NormalTok{(p1, p2, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8106_hw2_qz2266_files/figure-latex/unnamed-chunk-10-3.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  The partial dependence plot can be used to visualize and analyze
+  interaction between the target response and a set of input features of
+  interest. Here it shows the marginal effect \texttt{perc.alumni},
+  \texttt{Apps}, and \texttt{Accept} features have on the predicted
+  outcome `Outcome'.
+\end{itemize}
+
+\emph{Report test error}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{mars.fit\_test }\OtherTok{\textless{}{-}} \FunctionTok{train}\NormalTok{(x\_test, y\_test,}
+                  \AttributeTok{method =} \StringTok{"earth"}\NormalTok{,}
+                  \AttributeTok{tuneGrid =}\NormalTok{ mars\_grid,}
+                  \AttributeTok{trControl =}\NormalTok{ ctrl1)}
+
+\NormalTok{mars.fit\_test}\SpecialCharTok{$}\NormalTok{results}\SpecialCharTok{$}\NormalTok{RMSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 2106.016 2106.016 1990.475 2061.542 1886.144 1863.037 1889.813 1865.985
+##  [9] 1943.363 1874.553 2053.224 1787.298 1999.930 1808.253 2063.908 2057.821
+## [17] 2063.030 2052.791 2119.763 2057.074 2113.995 2071.716 2107.173 2072.341
+## [25] 2107.173 2128.225 2107.173 2130.499 2107.173 2142.306
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Test Error}
+\NormalTok{mars\_pred }\OtherTok{=} \FunctionTok{predict}\NormalTok{(mars.fit, x\_test)}
+\NormalTok{mars\_test\_rmse }\OtherTok{=} \FunctionTok{RMSE}\NormalTok{(mars\_pred, y\_test)}
+\NormalTok{mars\_test\_rmse}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1665.72
+\end{verbatim}
+
+\begin{itemize}
+\item
+  The final model using MARS is:
+\item
+  f(x) = 9750.9084463 - 0.74h(expend-15886) - 27.4h(79-grad\_rate) +
+  0.36h(room\_board-4323) - 1.05 h(4323-room\_board) -
+  1.57h(1379-f\_undergrad) - 91.8h(22-perc\_alumni) + 0.44h(apps-3712) +
+  0.87h(1300-personal) + 0.71h(expend-6897) - 2.03h(enroll-911) +
+  5.75h(911-enroll) - 1.99h(2109-accept)
+\item
+  Test error is 1665.72.
+\end{itemize}
+
+\hypertarget{e.-model-selection}{%
+\section{e). Model selection}\label{e.-model-selection}}
+
+\begin{itemize}
+\item
+  Based on the summary results and the plot, MARS model is preferred
+  compared to linear model, since the RMSE of MARS model is smaller than
+  linear model, and the R squared of MARS is a little larger than linear
+  model, which denotes more proportion of y is explained by x.
+\item
+  Moreover, the test error of MARS (RMSE = 1665.72) is smaller than
+  linear model (RMSE = 1735.178), which further enforces our decision
+  above.
+\item
+  For general applications, I think MARS is a better approach compared
+  to a linear model. Since MARS models are more flexible than linear
+  regression models. MARS models are simple to understand and interpret.
+\end{itemize}
+
+\end{document}
