@@ -201,7 +201,7 @@ GCV score: 2766492
         
 *Plot of final model*
 
-```{r fig.height=10, fig.width=10}
+```{r}
 gam_final <- gam(outstate ~ s(perc_alumni) + s(terminal) + s(books) + 
                 s(grad_rate)+ s(top10perc) + s(s_f_ratio) + s(personal) + 
                 s(p_undergrad) + s(room_board) + s(enroll) + s(accept) +
@@ -245,7 +245,7 @@ gam_test_RMSE
 
 - Using all of our predictors, our model has an MSE of 2260226 (RMSE 1503.405) when we apply our model to the training data and an MSE of 3012372 (RMSE 1735.619) when we apply it to the testing data from our original partitioning. 
 
-- Alternativelly, the other model has an MSE of 2279817 (RMSE 1509.906) when we apply our model to the training data and an MSE of 3010842 (RMSE 1735.178) when we apply it to the testing data from our original partitioning. 
+- Alternatively, the other model has an MSE of 2279817 (RMSE 1509.906) when we apply our model to the training data and an MSE of 3010842 (RMSE 1735.178) when we apply it to the testing data from our original partitioning. 
 
 - In summary, when using all of our predictors, we have effective degrees of freedom, which represent the complexity of the smooth function. `terminal`, `top10perc`, `top25perc`, `personal`, `p_undergrad`, and `enroll` all have df = 1, corresponding to a linear trend. Those with dfs around 2, such as `room_board`` and `books`, suggesting a  quadratic relationship, whereas those with dfs around three, such as `grad_rate` and `accept`, are cubically incorporated, and so forth. 
 
